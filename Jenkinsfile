@@ -7,9 +7,7 @@ pipeline {
     stage('unit test') {
 
       steps {
-        sh '''export PATH=$PATH:/usr/local/bin/
-
-mvn clean test'''
+        sh 'mvn clean test'
       }
     }
     stage('integration test') {
