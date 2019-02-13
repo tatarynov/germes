@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('unit test') {
       environment {
-        PATH = '$PATH:/usr/local/bin/'
+        PATH+EXTRA='/usr/local/bin/'
       }
       steps {
         sh '''export PATH=$PATH:/usr/local/bin/
