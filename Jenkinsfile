@@ -1,13 +1,11 @@
 pipeline {
   agent any
-  environment {
-    PATH = '$PATH:/usr/local/bin/'
-  }
   stages {
     stage('unit test') {
-
       steps {
-        sh 'mvn clean test'
+        withEnv(["PATH+EXTRA=/usr/local/bin"]) {
+          sh 'mvn clean test'
+        }
       }
     }
     stage('integration test') {
