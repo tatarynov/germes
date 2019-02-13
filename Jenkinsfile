@@ -1,10 +1,11 @@
 pipeline {
   agent any
+  environment {
+    PATH = '$PATH:/usr/local/bin/'
+  }
   stages {
     stage('unit test') {
-      environment {
-        PATH+EXTRA='/usr/local/bin/'
-      }
+
       steps {
         sh '''export PATH=$PATH:/usr/local/bin/
 
